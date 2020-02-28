@@ -1,4 +1,4 @@
-import { itProp, fc } from "../lib/jest-fast-check";
+import { itProp, fc } from "../src/jest-fast-check";
 
 const delay = (duration: number) =>
   new Promise(resolve => {
