@@ -1,4 +1,4 @@
-# Property based testing for AVA based on [fast-check](https://github.com/dubzzz/fast-check/)
+# Property based testing for Jest based on [fast-check](https://github.com/dubzzz/fast-check/)
 
 [![Build Status](https://travis-ci.com/dubzzz/jest-fast-check.svg?branch=master)](https://travis-ci.com/dubzzz/jest-fast-check)
 [![npm version](https://badge.fury.io/js/jest-fast-check.svg)](https://badge.fury.io/js/jest-fast-check)
