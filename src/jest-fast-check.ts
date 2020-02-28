@@ -73,10 +73,8 @@ export namespace testProp {
   ): void => internalTestProp(test.skip, label, arbitraries, prop, params);
   export const todo = <Ts extends any[]>(
     label: string,
-    arbitraries: ArbitraryTuple<Ts>,
-    prop: Prop<Ts>,
-    params?: fc.Parameters<Ts>
-  ): void => internalTestProp(test.todo, label, arbitraries, prop, params);
+    arbitraries?: ArbitraryTuple<Ts>
+  ): void => test.todo(label);
 }
 
 export function itProp<Ts extends any[]>(
@@ -103,10 +101,8 @@ export namespace itProp {
   ): void => internalTestProp(it.skip, label, arbitraries, prop, params);
   export const todo = <Ts extends any[]>(
     label: string,
-    arbitraries: ArbitraryTuple<Ts>,
-    prop: Prop<Ts>,
-    params?: fc.Parameters<Ts>
-  ): void => internalTestProp(it.todo, label, arbitraries, prop, params);
+    arbitraries?: ArbitraryTuple<Ts>
+  ): void => it.todo(label);
 }
 
 export { fc };
