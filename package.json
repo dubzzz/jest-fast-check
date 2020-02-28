@@ -1,6 +1,6 @@
 {
   "name": "jest-fast-check",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "🚧 Property based testing for Jest based on fast-check",
   "main": "lib/jest-fast-check.js",
   "types": "lib/jest-fast-check.d.ts",
