@@ -54,7 +54,7 @@ testProp(
   { seed: 4242 }
 );
 
-testProp.skip("should be skipped", [fc.fullUnicodeString()], text => {
+testProp.skip("should be skipped", [fc.fullUnicodeString()], (text) => {
   return text.length === [...text].length;
 });
 
@@ -69,3 +69,4 @@ describe("with it", () => {
 
 - `jest >=25.1.0`
 - `fast-check ^1.0.0`
+- `typescript >=3.9.0`
