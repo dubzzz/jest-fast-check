@@ -5,11 +5,11 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "jest --config index.test.cjs"
+    "test": "jest --config jest.config.cjs"
   },
   "devDependencies": {
     "fast-check": "2.0.0",
-    "jest": "^25.1.0",
+    "jest": "^26.4.1",
     "jest-fast-check": "file:../../bundle/package"
   }
 }
