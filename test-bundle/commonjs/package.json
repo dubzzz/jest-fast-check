@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "jest"
+    "test": "jest --config index.test.cjs"
   },
   "devDependencies": {
     "fast-check": "2.0.0",
