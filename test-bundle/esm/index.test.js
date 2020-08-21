@@ -5,7 +5,7 @@ import { testProp, fc } from "jest-fast-check";
 testProp(
   "should detect the substring",
   [fc.string(), fc.string(), fc.string()],
-  (t, a, b, c) => {
-    t.true((a + b + c).includes(b));
+  (a, b, c) => {
+    expect((a + b + c).includes(b)).toBe(true);
   }
 );
