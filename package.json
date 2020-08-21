@@ -2,13 +2,21 @@
   "name": "jest-fast-check",
   "version": "0.0.0",
   "description": "🚧 Property based testing for Jest based on fast-check",
+  "type": "commonjs",
   "main": "lib/jest-fast-check.js",
+  "exports": {
+    ".": {
+      "require": "./lib/jest-fast-check.js",
+      "default": "./lib/esm/jest-fast-check.js"
+    }
+  },
+  "module": "lib/esm/jest-fast-check.js",
   "types": "lib/jest-fast-check.d.ts",
   "files": [
     "lib"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && tsc --module es2015 --moduleResolution node --outDir lib/esm && cp package.esm-template.json lib/esm/package.json",
     "jest-test": "jest",
     "test": "sh test.sh",
     "format:check": "prettier --list-different \"**/*.{js,ts}\"",
@@ -25,14 +33,14 @@
   },
   "homepage": "https://github.com/dubzzz/jest-fast-check#readme",
   "peerDependencies": {
-    "fast-check": "^1.0.0",
+    "fast-check": "^2.0.0",
     "jest": ">=25.1.0"
   },
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "^25.1.3",
     "@types/node": "^13.7.6",
-    "fast-check": "^1.22.2",
+    "fast-check": "^2.0.0",
     "jest": "^25.1.0",
     "prettier": "^1.19.1",
     "ts-jest": "^25.2.1",

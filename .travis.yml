@@ -1,7 +1,31 @@
 language: node_js
 node_js:
-  - "10"
+  - "14"
 script:
-  - yarn format:check
-  - yarn build
-  - yarn test
+  - PROJECT_ROOT_PATH="$(pwd)"
+  # Classical test workflow
+  - npm run build
+  - npm run test
+  # Checking the bundle against commonjs and esm configurations
+  ## Instead of linking on ., we pack the package as if it was released on npm registry
+  ## then we link towards this version (no devDependencies installed, no unpublished files available...).
+  - cd "$PROJECT_ROOT_PATH"
+  - npm pack && mkdir -p bundle && tar -C bundle -zxvf jest-fast-check-*.tgz
+  - rm -rf node_modules/
+  ## CommonJS
+  - cd "$PROJECT_ROOT_PATH"
+  - cd test-bundle/commonjs && yarn && yarn test
+  ## ESM - Not activated, need updates on https://github.com/facebook/jest/issues/9430
+  #- cd "$PROJECT_ROOT_PATH"
+  #- cd test-bundle/esm && yarn && yarn test
+  ## Cleaning for deploy
+  - cd "$PROJECT_ROOT_PATH"
+deploy:
+  provider: npm
+  email: npm@dubien.org
+  skip_cleanup: true
+  api_key:
+    secure: C5hsX9rn9vmVwmqb6bx7IHpA8hB7qaLABNpbPRh+T9OIEO5pAljXYHfbLbFBWaMnwa1VfkUkGd+h9WF+Xk+DzI4qSQkQpnyNtjkKTh8U6RzY1uKgvbcn5BHmdqnSgama8q04BYEAlCMwBUPlPJAK8COYrr9MmoDKMIBjUgirwJX4ZTPOPBSVf2aYqoDBojZPQOnLBCpeudXeWCjXSpKcLaK1x6PNCEp16OYJiUrJPHyJS1v87VVUD3bPLhdmxKvxSq2lvaVk8Ifyqj/5Ah+RIFr4L2h/a2zla3tufRzc6WENfC+x7g/30HF7YbAWQZeO3dJqYHSRcbSmR3gcH7zIh+SfQzGDnNiY3d1Fihde25IFor+vnlBDXR+9P+11kGjXU0NSiAFGZW2UW1ZetwcQBgAwf2tHUPXQX8W7GK1V7kkVNkmrf72t2s1KMBAC/Dssk9uTesblwXbx3Yv/M1p/A03R2Gzhd+UZ2k6cGx7AE7tkYRuNilusWQdomdOCzK5FNl/2/cNJ47v996ot15HSke7mxZcEVqe1RE89uU0Gu3M9Ey4FyjQiRcFBEK6QIEbJymMYS04oQpJbWRhm/1vQZ5adhjJ6eSX5lVW0QrxIvd+dTAQ5ehcVKdWyM4rVFQv0ZwciLrKfgldCAVNeNkeRqwFbKuFNyuZBd0nJV+V1nOQ=
+  on:
+    tags: true
+    repo: dubzzz/jest-fast-check
