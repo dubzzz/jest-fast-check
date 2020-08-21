@@ -1,0 +1,15 @@
+{
+  "type": "commonjs",
+  "name": "commonjs",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "fast-check": "2.0.0",
+    "jest": "^25.1.0",
+    "jest-fast-check": "file:../../bundle/package"
+  }
+}
