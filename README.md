@@ -67,6 +67,8 @@ describe("with it", () => {
 
 ## Minimal requirements
 
-- `jest >=25.1.0`
-- `fast-check ^1.0.0`
-- `typescript >=3.9.0`
+| jest-fast-check | jest | fast-check           |
+| --------------- | ---- | -------------------- |
+| ^1.0.0          | -    | ^2.0.0<sup>(1)</sup> |
+
+- (1) `fast-check@^2.0.0` for hybrid module support: `commonjs` and `esm` together
