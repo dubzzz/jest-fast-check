@@ -1,3 +1,8 @@
+// This test relies on an experimental flag of node:
+// --experimental-vm-modules
+// Jest is currently adding support ES Modules based on this flag
+// More on: https://github.com/facebook/jest/issues/9430
+
 import { testProp, fc } from "jest-fast-check";
 
 // for all a, b, c strings
