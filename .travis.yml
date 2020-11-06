@@ -15,9 +15,9 @@ script:
   ## CommonJS
   - cd "$PROJECT_ROOT_PATH"
   - cd test-bundle/commonjs && yarn && yarn test
-  ## ESM - Not activated, need updates on https://github.com/facebook/jest/issues/9430
-  #- cd "$PROJECT_ROOT_PATH"
-  #- cd test-bundle/esm && yarn && yarn test
+  ## ESM - More on ESM + Jest at https://github.com/facebook/jest/issues/9430
+  - cd "$PROJECT_ROOT_PATH"
+  - cd test-bundle/esm && yarn && yarn test
   ## Cleaning for deploy
   - cd "$PROJECT_ROOT_PATH"
 deploy:
