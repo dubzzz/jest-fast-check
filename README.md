@@ -67,8 +67,10 @@ describe("with it", () => {
 
 ## Minimal requirements
 
-| jest-fast-check | jest | fast-check           |
-| --------------- | ---- | -------------------- |
-| ^1.0.0          | -    | ^2.0.0<sup>(1)</sup> |
+| jest-fast-check | jest                                 | fast-check           |
+| --------------- | ------------------------------------ | -------------------- |
+| ^1.0.0          | >=26.5.0<sup>(1)</sup><sup>(2)</sup> | ^2.0.0<sup>(3)</sup> |
 
-- (1) `fast-check@^2.0.0` for hybrid module support: `commonjs` and `esm` together
+- (1) any version of `jest` should be great if you are using `commonjs`
+- (2) in order to use `esm` build, you may need to enable experimental features of node, see [here](./test-bundle/esm/package.json)
+- (3) `fast-check@^2.0.0` for hybrid module support: `commonjs` and `esm` together

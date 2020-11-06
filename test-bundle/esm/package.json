@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "fast-check": "2.0.0",
-    "jest": "^26.4.1",
+    "jest": "^26.5.0",
     "jest-fast-check": "file:../../bundle/package"
   }
 }
