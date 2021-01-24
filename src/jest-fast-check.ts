@@ -1,4 +1,4 @@
-import * as fc from "fast-check";
+import * as fc from 'fast-check';
 
 // TODO Import them directly
 // Typings copied from the one of @types/jest
@@ -23,12 +23,8 @@ type ArbitraryTuple<Ts extends [any] | any[]> = {
   [P in keyof Ts]: fc.Arbitrary<Ts[P]>;
 };
 
-type Prop<Ts extends [any] | any[]> = (
-  ...args: Ts
-) => boolean | void | PromiseLike<boolean | void>;
-type PromiseProp<Ts extends [any] | any[]> = (
-  ...args: Ts
-) => Promise<boolean | void>;
+type Prop<Ts extends [any] | any[]> = (...args: Ts) => boolean | void | PromiseLike<boolean | void>;
+type PromiseProp<Ts extends [any] | any[]> = (...args: Ts) => Promise<boolean | void>;
 
 function wrapProp<Ts extends [any] | any[]>(prop: Prop<Ts>): PromiseProp<Ts> {
   return (...args: Ts) => Promise.resolve(prop(...args));
@@ -46,10 +42,7 @@ function internalTestProp<Ts extends [any] | any[]>(
 
   const promiseProp = wrapProp(prop);
   testFn(`${label} (with seed=${customParams.seed})`, async () => {
-    await fc.assert(
-      (fc.asyncProperty as any)(...(arbitraries as any), promiseProp),
-      params
-    );
+    await fc.assert((fc.asyncProperty as any)(...(arbitraries as any), promiseProp), params);
   });
 }
 
@@ -75,10 +68,8 @@ export namespace testProp {
     prop: Prop<Ts>,
     params?: fc.Parameters<Ts>
   ): void => internalTestProp(test.skip, label, arbitraries, prop, params);
-  export const todo = <Ts extends [any] | any[]>(
-    label: string,
-    arbitraries?: ArbitraryTuple<Ts>
-  ): void => test.todo(label);
+  export const todo = <Ts extends [any] | any[]>(label: string, arbitraries?: ArbitraryTuple<Ts>): void =>
+    test.todo(label);
 }
 
 export function itProp<Ts extends [any] | any[]>(
@@ -103,10 +94,8 @@ export namespace itProp {
     prop: Prop<Ts>,
     params?: fc.Parameters<Ts>
   ): void => internalTestProp(it.skip, label, arbitraries, prop, params);
-  export const todo = <Ts extends [any] | any[]>(
-    label: string,
-    arbitraries?: ArbitraryTuple<Ts>
-  ): void => it.todo(label);
+  export const todo = <Ts extends [any] | any[]>(label: string, arbitraries?: ArbitraryTuple<Ts>): void =>
+    it.todo(label);
 }
 
 export { fc };
