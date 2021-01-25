@@ -1,6 +1,6 @@
 # Property based testing for Jest based on [fast-check](https://github.com/dubzzz/fast-check/)
 
-[![Build Status](https://travis-ci.com/dubzzz/jest-fast-check.svg?branch=master)](https://travis-ci.com/dubzzz/jest-fast-check)
+[![Build Status](https://github.com/dubzzz/jest-fast-check/workflows/Build%20Status/badge.svg?branch=main)](https://github.com/dubzzz/jest-fast-check/actions)
 [![npm version](https://badge.fury.io/js/jest-fast-check.svg)](https://badge.fury.io/js/jest-fast-check)
 
 Bring the power of property based testing framework fast-check into jest.
