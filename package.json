@@ -71,5 +71,9 @@
     "testMatch": [
       "**/*.spec.ts"
     ]
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/fast-check"
   }
 }
