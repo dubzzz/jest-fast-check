@@ -1,6 +1,6 @@
 {
   "name": "jest-fast-check",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Property based testing for Jest based on fast-check",
   "type": "commonjs",
   "main": "lib/jest-fast-check.js",
