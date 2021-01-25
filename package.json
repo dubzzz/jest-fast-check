@@ -7,6 +7,7 @@
   "exports": {
     ".": {
       "require": "./lib/jest-fast-check.js",
+      "import": "./lib/esm/jest-fast-check.js",
       "default": "./lib/esm/jest-fast-check.js"
     }
   },
