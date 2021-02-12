@@ -38,7 +38,7 @@ Please note that the properties accepted by `jest-fast-check` as input can eithe
 
 ## Advanced
 
-If you want to forward custom parameters to fast-check, `testProp` accepts an optional `fc.Parameters` ([more](https://github.com/dubzzz/fast-check/blob/master/documentation/1-Guides/Runners.md#runners)).
+If you want to forward custom parameters to fast-check, `testProp` accepts an optional `fc.Parameters` ([more](https://github.com/dubzzz/fast-check/blob/main/documentation/1-Guides/Runners.md#runners)).
 
 `jest-fast-check` also comes with `.only`, `.skip` and `.todo` from jest.
 
