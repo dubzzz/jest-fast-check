@@ -39,7 +39,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/jest": "^26.0.20",
+    "@types/jest": "^27.0.0",
     "@types/node": "^16.0.0",
     "fast-check": "^2.0.0",
     "jest": "^25.1.0",
