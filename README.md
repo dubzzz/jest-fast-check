@@ -69,6 +69,7 @@ describe("with it", () => {
 
 | jest-fast-check | jest                                 | fast-check           |
 | --------------- | ------------------------------------ | -------------------- |
+| ^2.0.0          | >=26.5.0<sup>(1)</sup><sup>(2)</sup> | ^3.0.0               |
 | ^1.0.0          | >=26.5.0<sup>(1)</sup><sup>(2)</sup> | ^2.0.0<sup>(3)</sup> |
 
 - (1) any version of `jest` should be great if you are using `commonjs`
