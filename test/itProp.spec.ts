@@ -1,7 +1,7 @@
 import { itProp, fc } from '../src/jest-fast-check';
 
 const delay = (duration: number) =>
-  new Promise((resolve) => {
+  new Promise<void>((resolve) => {
     setTimeout(() => resolve(), duration);
   });
 
