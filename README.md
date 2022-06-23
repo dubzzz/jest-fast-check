@@ -1,3 +1,7 @@
+⚠️⚠️⚠️ Project moved to https://github.com/dubzzz/fast-check/tree/main/packages/jest ⚠️⚠️⚠️
+
+---
+
 # Property based testing for Jest based on [fast-check](https://github.com/dubzzz/fast-check/)
 
 [![Build Status](https://github.com/dubzzz/jest-fast-check/workflows/Build%20Status/badge.svg?branch=main)](https://github.com/dubzzz/jest-fast-check/actions)
